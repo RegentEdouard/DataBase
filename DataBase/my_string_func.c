@@ -11,7 +11,7 @@ int readline(char s[], int lim)
 	if (c == '\n') {
 		s[i] = c;
 		++i;
-	}
+	} 
 	s[i] = '\0';
 	return i;
 }
