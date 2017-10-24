@@ -11,7 +11,7 @@ int readline(char s[], int lim)
 	if (c == '\n') {
 		s[i] = c;
 		++i;
-	}
+	} 
 	s[i] = '\0';
 	return i;
 }
@@ -21,13 +21,11 @@ char ** parseLine(char line[]) {
 	switch (line[0])
 	{
 	case 'S': case 'T': case 'E': case 'A':
-		
 		tabStr = (char **)malloc(3 * sizeof(char *));
 		tabStr[0] = (char *)malloc(2 * sizeof(char));
 		tabStr[1] = (char *)malloc(11 * sizeof(char));
 		tabStr[2] = (char *)malloc(21 * sizeof(char));
-		sscanf_s(line, "%s %s %s", tabStr[0], (unsigned)_countof(tabStr[0]), tabStr[1], (unsigned)_countof(tabStr[1]), tabStr[2], (unsigned)_countof(tabStr[2]));
-		printf("%s\n", tabStr[1]);
+		sscanf_s(line, "%s %s %s", tabStr[0], 2 * sizeof(char), tabStr[1], 11 * sizeof(char), tabStr[2], 21 * sizeof(char));
 		break;
 	case 'C':
 		tabStr = (char **)malloc(4 * sizeof(char *));
@@ -35,7 +33,7 @@ char ** parseLine(char line[]) {
 		tabStr[1] = (char *)malloc(11 * sizeof(char));
 		tabStr[2] = (char *)malloc(21 * sizeof(char));
 		tabStr[3] = (char *)malloc(4 * sizeof(char));
-		sscanf_s(line, "%s %s %s %s", tabStr[0], (unsigned)_countof(tabStr[0]),tabStr[1], (unsigned)_countof(tabStr[1]),tabStr[2], (unsigned)_countof(tabStr[2]), tabStr[3], (unsigned)_countof(tabStr[3]));
+		sscanf_s(line, "%s %s %s %s", tabStr[0], 2 * sizeof(char),tabStr[1], 11 * sizeof(char),tabStr[2], 21 * sizeof(char), tabStr[3], 4 * sizeof(char));
 		break;
 	default:
 		return NULL;
