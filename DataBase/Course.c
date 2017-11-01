@@ -13,7 +13,6 @@ typedef struct Course
 }Course;
 
 
-
 Course *student_node_alloc()
 {
 	return (Course *)malloc(sizeof(Course));
@@ -42,6 +41,13 @@ void print_Courses(list_t* list)
 }
 
 
+void parser_to_Course(Course* course, char** parser)
+{
+	course->iD = atoi(parser[1]);
+	course->Name = parser[2];
+	course->Semester_Nb = atoi(parser[3]);
+	return;
+}
 
 void print_Course(Course* C)
 {
@@ -59,3 +65,4 @@ Course * find_Course(int Course_number, list_t* list)
 	}
 	return list_get_item(temporary);
 }
+
