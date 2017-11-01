@@ -3,6 +3,7 @@
 typedef struct node* list_t;
 
 int list_add(list_t *, void *);
+void *list_remove(list_t, void *);
 int list_count_element(list_t);
 list_t *list_get_node(list_t, int);
 

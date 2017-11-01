@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "list.h"
 
-struct node {	//It is a node, not realy a list
+struct node {
 	void *item;
 	struct list_t *next;
 };
@@ -17,6 +17,21 @@ int list_add(list_t *head_list, void *element) {
 	node->item = element;
 	*head_list = node;
 	return 0;
+}
+
+void *list_remove(list_t head_list, void *element) {
+	list_t temp_list = head_list;
+	if (list_get_item(temp_list) == element) {
+		head_list = list_get_next(temp_list);
+		return element;
+	}
+	while (temp_list = !NULL) {
+		if (list_get_item(list_get_next(temp_list)) == element) {
+			temp_list->next = list_get_next(list_get_next(temp_list->next));
+			return element;
+		}
+	}
+	return NULL;
 }
 
 int list_count_element(list_t list) {
