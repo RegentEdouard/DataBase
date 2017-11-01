@@ -3,6 +3,8 @@
 #include <string.h>
 #include "my_string_func.h"
 
+#ifndef TEST
+
 int main(int argc, char **argv) {
 	char *test = "S 123456 Ivan";
 	char *test2 = "C 134892 Math 3";
@@ -13,3 +15,5 @@ int main(int argc, char **argv) {
 	printf("%s //%s //%s //%s\n", tabTest2[0], tabTest2[1], tabTest2[2], tabTest2[3]);
 	while (1);
 }
+
+#endif // !TEST
