@@ -40,13 +40,6 @@ void print_Students(list_t* list)
 }
 
 
-void parser_to_Student(Student* stud, char** parser)
-{
-	stud->iD = atoi(parser[1]);
-	stud->FName = parser[2];
-	return;
-}
-
 Student * find_Student(int Student_number, list_t* list)
 {
 	list_t * temporary = list;
